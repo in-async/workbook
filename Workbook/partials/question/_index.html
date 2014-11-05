@@ -1,0 +1,14 @@
+﻿<form ng-submit="filterQuestions(filterText)">
+    <input ng-model="filterText" />
+    <button type="submit">filter</button>
+</form>
+
+<ul>
+    <li ng-repeat="question in questions">
+        <!-- exit a message -->
+        <input ng-model="question.text" ng-change="questions.$save(question)" />
+        <input ng-model="question.answer" ng-change="questions.$save(question)" />
+        <!-- delete message -->
+        <button ng-click="questions.$remove(question)">X</button>
+    </li>
+</ul>
